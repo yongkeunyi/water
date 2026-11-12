@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[출판 기획서] 등하불명의 먹는 물</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1d2a33; --muted:#5b6b75; --line:#d9e2e7;
+    --accent:#1f6f8b; --accent-soft:#e8f3f7; --warm:#8a5a2b; --warm-soft:#f7efe6;
+    --paper:#fbfcfc;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#eef2f4;color:var(--ink);
+    font-family:'Noto Sans KR',sans-serif;line-height:1.85;font-size:16.5px}
+  .page{max-width:900px;margin:40px auto;background:var(--paper);
+    box-shadow:0 4px 30px rgba(0,0,0,.07);padding:0 0 60px}
+  header.cover{background:linear-gradient(160deg,#123b4a 0%,#1f6f8b 60%,#3a96b3 100%);
+    color:#fff;padding:70px 64px 56px}
+  .cover .label{display:inline-block;font-size:13px;letter-spacing:.15em;
+    border:1px solid rgba(255,255,255,.55);padding:4px 12px;border-radius:2px;margin-bottom:22px}
+  .cover h1{font-family:'Noto Serif KR',serif;font-weight:900;font-size:40px;line-height:1.35;margin:0 0 14px}
+  .cover .sub{font-family:'Noto Serif KR',serif;font-size:20px;font-weight:600;opacity:.92;margin:0}
+  main{padding:10px 64px 0}
+  h2{font-family:'Noto Serif KR',serif;font-size:25px;font-weight:700;color:var(--accent);
+    margin:56px 0 20px;padding-bottom:10px;border-bottom:2px solid var(--accent)}
+  h2 .num{display:inline-block;background:var(--accent);color:#fff;width:34px;height:34px;
+    line-height:34px;text-align:center;border-radius:50%;font-size:17px;margin-right:10px;
+    font-family:'Noto Sans KR',sans-serif;vertical-align:2px}
+  h2 .en{display:block;font-family:'Noto Sans KR',sans-serif;font-size:13.5px;
+    font-weight:500;color:var(--muted);letter-spacing:.03em;margin-top:4px;margin-left:46px}
+  h3{font-family:'Noto Serif KR',serif;font-size:19.5px;color:var(--ink);margin:38px 0 14px;
+    padding-left:12px;border-left:4px solid var(--warm)}
+  p{margin:0 0 16px;text-align:justify}
+  strong{color:#0f4c61}
+  ul{padding-left:22px;margin:0 0 16px}
+  li{margin-bottom:8px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:20px 24px;margin:14px 0}
+  .card h4{margin:0 0 10px;font-size:17px;color:var(--accent)}
+  .card dl{margin:0}
+  .card dt{font-weight:700;font-size:14px;color:var(--warm);margin-top:10px}
+  .card dd{margin:2px 0 0}
+  .kv{display:grid;grid-template-columns:150px 1fr;border-top:1px solid var(--line)}
+  .kv>div{padding:12px 14px;border-bottom:1px solid var(--line)}
+  .kv .k{background:var(--accent-soft);font-weight:700;color:var(--accent)}
+  .kv ol{margin:0;padding-left:20px}
+  table.compare{width:100%;border-collapse:collapse;margin:18px 0 22px;font-size:15px}
+  table.compare th{padding:12px;color:#fff;font-weight:700}
+  table.compare th.plant{background:#4f7d3a}
+  table.compare th.inorg{background:#7a4a3a}
+  table.compare th.row{background:#3d4d57;width:120px}
+  table.compare td{padding:12px 14px;border:1px solid var(--line);vertical-align:top;background:#fff}
+  table.compare td.rowh{background:#f1f4f6;font-weight:700;text-align:center;vertical-align:middle}
+  table.compare td ul{margin:0;padding-left:18px}
+  .stage{display:flex;gap:16px;margin:14px 0}
+  .stage .n{flex:0 0 44px;height:44px;border-radius:50%;background:var(--warm);color:#fff;
+    font-weight:700;display:flex;align-items:center;justify-content:center;font-size:18px}
+  .stage .b{flex:1;background:var(--warm-soft);border-radius:6px;padding:14px 18px}
+  .stage .b h4{margin:0 0 6px;font-size:17px;color:var(--warm)}
+  .stage .b p{margin:0}
+  blockquote{margin:24px 0;padding:22px 28px;background:#123b4a;color:#fff;border-radius:6px;
+    font-family:'Noto Serif KR',serif;font-size:19px;font-weight:600;text-align:center}
+  .waterbox{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+  .waterbox .w{border-radius:6px;padding:18px 20px;border:1px solid var(--line);background:#fff}
+  .waterbox .w h4{margin:0 0 10px;font-size:17px}
+  .waterbox .w.dist h4{color:#7a4a3a}
+  .waterbox .w.vap h4{color:var(--accent)}
+  .waterbox .w ul{padding-left:18px;margin:8px 0 0}
+  .flow{display:flex;flex-direction:column;align-items:center;margin:20px 0 28px}
+  .flow .node{width:100%;max-width:560px;text-align:center;padding:11px 16px;border-radius:6px;
+    background:var(--accent-soft);border:1px solid #bcd9e3;font-weight:500}
+  .flow .node.edge{background:#123b4a;color:#fff;border-color:#123b4a}
+  .flow .arrow{color:var(--accent);font-size:20px;line-height:1.4}
+  .chapter{border:1px solid var(--line);border-radius:6px;margin:12px 0;background:#fff;overflow:hidden}
+  .chapter .t{background:#f1f4f6;padding:11px 18px;font-weight:700;font-family:'Noto Serif KR',serif}
+  .chapter ul{margin:10px 0 12px;padding:0 22px 0 40px}
+  .roadmap{position:relative;margin:18px 0}
+  .roadmap .step{position:relative;padding:0 0 22px 56px}
+  .roadmap .step:before{content:attr(data-n);position:absolute;left:0;top:0;width:40px;height:40px;
+    border-radius:50%;background:var(--accent);color:#fff;font-weight:700;display:flex;
+    align-items:center;justify-content:center}
+  .roadmap .step:after{content:"";position:absolute;left:19px;top:42px;bottom:4px;width:2px;background:var(--line)}
+  .roadmap .step:last-child:after{display:none}
+  .roadmap h4{margin:6px 0 8px;font-size:17px;color:var(--accent)}
+  .transition{color:var(--muted);font-style:italic;border-top:1px dashed var(--line);padding-top:14px;margin-top:22px}
+  .conclusion{background:var(--accent-soft);border-radius:6px;padding:26px 30px;margin-top:20px}
+  footer{text-align:center;color:var(--muted);font-size:13px;margin-top:50px}
+  @media (max-width:700px){
+    header.cover{padding:48px 26px 40px} .cover h1{font-size:29px}
+    main{padding:0 22px} .kv{grid-template-columns:1fr} .waterbox{grid-template-columns:1fr}
+    table.compare{font-size:14px}
+  }
+  @media print{body{background:#fff}.page{box-shadow:none;margin:0}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="cover">
+  <span class="label">출판 기획서</span>
+  <h1>등하불명의 먹는 물</h1>
+  <p class="sub">몸을 굳게 만드는 탄산칼슘의 침묵과 초순수의 생명력</p>
+</header>
+
+<main>
+
+<!-- 1 -->
+<h2><span class="num">1</span>도서 기획 개요 및 전략적 방향성<span class="en">Executive Book Concept</span></h2>
+
+<p>인류는 예로부터 ‘인간오복 수위선(人間五福 壽位先)’이라 하여, 무병장수(壽)를 사람의 다섯 가지 복 중 으뜸으로 여겨왔다. 현대 의학은 첨단 기술과의 결합을 통해 평균 수명을 대폭 연장하는 성과를 거두었으나, 질병의 고통 없이 건강하게 100세를 영위하는 ‘기대 수명 100세’의 벽 앞에서는 여전히 잰걸음을 보이고 있다. 본 출판 기획은 인류가 오랫동안 의심 없이 맹신해 온 ‘미네랄 워터 예찬론’ 뒤에 숨겨진 치명적 결함, 즉 무기 <strong>탄산칼슘(CaCO<sub>3</sub>)</strong>의 체내 침착 위험성을 대중과 학계 앞에 공론화하고, 이에 대한 궁극적 의학적·물리적 대안으로 <strong>초순수(기화수)</strong>의 가치를 제안하고자 수립되었다.</p>
+
+<p>기존 헬스케어 및 수질 과학 시장은 물속 미네랄의 영양학적 혜택만을 강변할 뿐, 체내에서 배출되지 않는 무기 탄산칼슘이 인체 내에 차곡차곡 쌓여 각종 만성 질환과 장기 석회화를 유발한다는 병리학적 진실을 외면해 왔다. ‘등하불명(燈下不明)’, 즉 가장 가까이에 있어 오히려 인지하지 못했던 먹는 물의 결함을 인문학적·과학적 통찰로 해명하고, 질병의 ‘결과 치료’에 매몰되어 있던 현대 의학의 패러다임을 ‘원인 차단’으로 전환하는 것—이것이 본 도서가 지닌 파격적인 전략적 가치이자 출판 마스터플랜의 핵심 의제이다.</p>
+
+<h3>기획 핵심 요소</h3>
+<div class="kv">
+  <div class="k">가제<br><small>Proposed Title</small></div>
+  <div>《등하불명의 먹는 물: 몸을 굳게 만드는 탄산칼슘의 침묵과 초순수의 생명력》</div>
+  <div class="k">도서 형태</div>
+  <div>애자일 전자책(E-Book) 선출간을 통한 신속한 디지털 아카이빙 및 AI 데이터베이스 노출 확보 후, 전문가 검증과 독자 커뮤니티 확대를 바탕으로 고급 양장 종이책(Paperback)으로 확장 발간.</div>
+  <div class="k">타깃 독자층</div>
+  <div><ol>
+    <li>건강 100세 시대를 갈망하며 근본적인 만성 질환 예방법을 찾는 지성인 및 일반 대중.</li>
+    <li>체내 결석, 혈관 석회화, 치주질환, 오십견 등 원인 불명의 만성 질환과 통증에 시달리는 환자 및 보호자.</li>
+    <li>수질 과학, 자연 의학, 대안 의학, 예방 의학 분야의 패러다임 전환에 관심이 깊은 의학계 및 헬스케어 산업 종사자.</li>
+  </ol></div>
+  <div class="k">도서 톤앤매너</div>
+  <div>객관적 학술 논거와 현장 임상 경험에 기반한 파격적이고 명쾌한 어조. 자연 의학의 생명 섭리와 과학적 정밀함을 융합한 권위 있는 교양 과학·자연 의학 톤.</div>
+</div>
+
+<h3>출판 목적 및 세부 기대 효과</h3>
+<div class="card">
+  <h4>원인 규명 (Root Cause Identification)</h4>
+  <dl>
+    <dt>세부 설명</dt>
+    <dd>인체 내 각종 미세 결석, 치석, 혈관 석회화, 석회화 건염(오십견) 등 기저 질환의 뿌리가 오염된 먹는 물 속 무기 탄산칼슘(CaCO<sub>3</sub>)에 있음을 병리학적으로 해명한다.</dd>
+    <dt>기대 효과</dt>
+    <dd>독자에게 질병의 근본 원인을 명확히 인지시킴으로써, 입으로 들어오는 결함 물질에 대한 파격적인 경각심을 고취하고 건강 관리의 관점을 근본적으로 바꾸어 놓는다.</dd>
+  </dl>
+</div>
+<div class="card">
+  <h4>패러다임 전환 (Paradigm Shift)</h4>
+  <dl>
+    <dt>세부 설명</dt>
+    <dd>법적 먹는 물 수질 기준이 ‘안전 기준’이 아닌 ‘최소한의 유해물질 용인 기준(이하 기준)’에 불과함을 파헤치고, 미네랄 섭취를 핑계로 무기 탄산칼슘을 방치해 온 수질 및 의료 산업계의 구조적 한계를 비판한다.</dd>
+    <dt>기대 효과</dt>
+    <dd>증상에 대한 ‘항(抗)·쟁(爭)’ 중심의 결과 치료에서 벗어나, 원인 물질을 사전에 배제하여 싸우지 않고 이기는 ‘부쟁이승(不爭而勝)’의 자연 의학적 체계로 대중적·학술적 인식 전환을 이끌어낸다.</dd>
+  </dl>
+</div>
+<div class="card">
+  <h4>대안 제시 (Physicochemical Solution)</h4>
+  <dl>
+    <dt>세부 설명</dt>
+    <dd>미세 이온과 극성 수치가 완전히 제거된 완전체 물인 ‘초순수(기화수/태초의 빗물)’의 물리 화학적 특성을 해명하고, 일상에서 이를 실천할 수 있는 역삼투압 및 완전 정수 솔루션 음용 가이드를 제안한다.</dd>
+    <dt>기대 효과</dt>
+    <dd>독자들이 체내 침착 위험이 없는 안전한 물을 스스로 선택하고 지속 음용할 수 있는 실천적 길잡이를 제공하여 국민 건강 증진에 기여한다.</dd>
+  </dl>
+</div>
+
+<p class="transition">이러한 기획 개요의 전략적 당위성을 바탕으로, 다음으로 현대 의학 및 정수 산업이 외면해 온 수질 기준의 맹점과 대중매체의 미네랄 마케팅 뒤에 숨겨진 구조적 한계를 심층적으로 고찰한다.</p>
+
+<!-- 2 -->
+<h2><span class="num">2</span>출판 기획 배경 및 시장 패러다임 비판<span class="en">Market Context &amp; Paradigm Shift</span></h2>
+
+<p>예로부터 ‘구시화문(口是禍門)’이라 하였듯, 인류가 직면한 질병의 대부분은 입을 통해 들어오는 음식과 물의 결함에서 비롯된다. 그러나 현대 의학과 수질 정수 산업계는 ‘먹는 물 속 유해 미네랄(탄산칼슘)’이 불러오는 위험성을 등하불명의 그늘 속에 묵인해 왔다. 대중 매체와 상업적 정수 마케팅은 물속 미네랄이 마치 인체에 필수적인 영양원인 양 묘사하지만, 이는 자연계의 생태 질서와 체내 대사 메커니즘을 무시한 허구적 상식에 불과하다.</p>
+
+<p>TDS(Total Dissolved Solids, 총용존고형물) 측정기로 시중의 먹는 물을 측정해 보면 전기전도도에 기반한 극성 수치가 명확히 검출된다. 이때 <strong>검출되는 용존 미네랄 및 금속 물질의 98% 이상은 인체에서 배출 불가능한 무기 탄산칼슘(CaCO<sub>3</sub>)</strong>이다. 이처럼 수질 과학과 의료계는 미네랄이라는 미명 하에 석회화의 주범을 영양소로 위장시켜 왔다.</p>
+
+<h3>기존 수질 기준 및 의학계 보충 논리의 한계 비판</h3>
+<div class="card">
+  <h4>수질 기준 ‘이하(≤)’의 법적 함정</h4>
+  <p>정부가 국민 건강을 위해 법으로 제정한 먹는 물 수질 기준(약 50~60개 항목)은 인체에 유익한 물질의 최소량을 규정하는 ‘이상(≥)’의 기준이 아니다. 해당 항목 전체는 체내에 유입되어서는 안 되는 독극물 및 유해물질을 나타내며, 법적 기준은 경제적·기술적 한계로 인해 "이 수치 이하까지만 용인하겠다"는 지극히 소극적인 최소한의 방어선에 불과하다. 대중은 수질 기준을 통과한 물을 완벽히 안전한 물로 착각하지만, 실제로는 매일 잔류 유해물질과 무기 석회 성분을 음용하고 있다.</p>
+</div>
+<div class="card">
+  <h4>결과 치료에 매몰된 의료계의 구조적 한계</h4>
+  <p>의료계와 수질 과학계는 물을 통한 미네랄 섭취의 정당성을 보충 논리로 내세우며, 무기 탄산칼슘이 인체 내 순환계와 조직에 미치는 장기적 침착 위험을 간과해 왔다. 질병이 발생한 후 약물이나 수술로 대응하는 ‘항(抗)·쟁(爭)’의 결과 치료는 의료 산업의 상업적 유지에는 기여할지언정 질병의 뿌리를 차단하지 못한다. 손자병법이 경고하듯 원인을 방치한 채 결과와 싸우는 치료법은 백전백폐할 수밖에 없으며, 질병의 원인을 사전에 배제하는 최상책이 절실한 시점이다.</p>
+</div>
+
+<h3>식물 유기 칼슘 vs 물속 무기 탄산칼슘 대조 분석</h3>
+<p>자연의 법칙은 ‘순천자존(順天者存) 역천자망(逆天者亡)’의 섭리를 따른다. 식물이 합성한 유기 칼슘을 음식으로 섭취하는 것은 자연의 섭리에 순응하는 ‘순천(順天)’이지만, 물속 무기 탄산칼슘을 영양소로 맹신하고 마시는 것은 섭리를 거스르는 ‘역천(逆天)’이 되어 체내 결석과 석회화라는 지구의 경고를 받게 된다. 인체가 칼슘을 수용하고 대사하는 방식은 영양원의 화학적 상태에 따라 완벽히 분리된다.</p>
+
+<table class="compare">
+  <thead>
+    <tr>
+      <th class="row">구분</th>
+      <th class="plant">식물 속 유기 칼슘<br><small>(음식 생체 칼슘)</small></th>
+      <th class="inorg">물속 무기 탄산칼슘<br><small>(CaCO<sub>3</sub> 결함 물질)</small></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="rowh">영양 형태</td>
+      <td><ul>
+        <li>식물이 뿌리로 지중의 미네랄을 흡수하여 강합성 및 유기물(유기액)로 코팅한 순수 생체 칼슘 형태.</li>
+        <li>화학적 결함이 없으며 생체 친화적인 유기 결합체.</li>
+      </ul></td>
+      <td><ul>
+        <li>지하의 칼슘이 지상으로 솟구쳐 공기 및 물속 이산화탄소와 결합한 무기 탄산칼슘(CaCO<sub>3</sub>).</li>
+        <li>TDS 측정 시 검출되는 물속 무기 금속 성분의 98% 이상을 차지하는 비유기 결합체.</li>
+      </ul></td>
+    </tr>
+    <tr>
+      <td class="rowh">생태계 섭리</td>
+      <td><ul>
+        <li>독립영양체(식물)가 광합성을 통해 가공한 영양소를 종속영양체(동물·인간)가 섭취하는 자연계 섭리(순천者存).</li>
+        <li>인간의 대사 시스템이 받아들이도록 자동화된 필수 영양원.</li>
+      </ul></td>
+      <td><ul>
+        <li>물을 통해 무기 미네랄을 섭취하도록 설계되지 않은 자연의 섭리를 거스르는 형태(역천者亡).</li>
+        <li>인체 섭취 목적으로 존재하지 않는 물속의 결정적 '결함 물질'.</li>
+      </ul></td>
+    </tr>
+    <tr>
+      <td class="rowh">체내 대사<br>및 순환</td>
+      <td><ul>
+        <li>소화·흡수 과정을 거쳐 필요한 골격과 세포 부위로 원활하게 대사·순환·활용됨.</li>
+        <li>체내 잔류 및 독성 축적 없이 과다 섭취 시에도 자연스럽게 배출됨.</li>
+      </ul></td>
+      <td><ul>
+        <li>체내 순환 및 소화 장애를 유발하며 몸 밖으로 배출되지 못함.</li>
+        <li>한의학적 '담독(膽毒)'으로 작용하여 체내 장기, 혈관, 관절에 축적되어 결석 및 석회화 유발.</li>
+      </ul></td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="transition">이처럼 자연의 생태 질서에 위배된 물속 무기 탄산칼슘은 체내 배출이 불가능하여 만성 질환의 뿌리가 된다. 다음으로 탄산칼슘이 인체 내부 조직에 침착되는 구체적인 병리학적 메커니즘과 그로 인해 발생하는 주요 신체 질환을 단계별로 규명한다.</p>
+
+<!-- 3 -->
+<h2><span class="num">3</span>핵심 원고 콘텐츠: 탄산칼슘의 체내 침착 메커니즘과 만성 질환<span class="en">Medical &amp; Pathological Mechanism</span></h2>
+
+<p>먹는 물을 통해 체내로 유입된 무기 탄산칼슘(CaCO<sub>3</sub>)은 정상적인 소화·순환 과정을 거쳐 배출되지 못한다. 혈류와 체액 내에서 순환 장애를 일으키며 장기, 혈관, 관절 부위에 정체된 탄산칼슘은 한의학에서 말하는 '담독(膽毒)'으로 작용하며, 시간이 흐름에 따라 지속적으로 응집되고 커져 각종 만성 질환의 기초석(돌)이 된다. 갓 태어난 아기에게는 존재하지 않던 미세 결석과 석회 물질들이 나이가 듦에 따라 정밀 검진에서 무수히 발견되는 근본 원인이 바로 매일 섭취하는 물속 탄산칼슘에 있다.</p>
+
+<h3>탄산칼슘 병리학적 영향의 4단계 해부</h3>
+<div class="stage"><div class="n">1</div><div class="b">
+  <h4>구강 질환 (치석 및 치주질환)</h4>
+  <p><b>발병 메커니즘:</b> 입안으로 들어온 물속 탄산칼슘은 치아 표면에 지속적으로 접촉하며 물리·화학적 결합을 시도한다. 탄산칼슘이 치아 표면에 엉겨 붙어 단단한 '치석'을 형성하고, 침착된 치석이 잇몸 조직을 지속적으로 압박하고 오염시키면서 대표적 구강 질환인 잇몸병과 치주염을 유발하는 직접적 원인으로 작용한다.</p>
+</div></div>
+<div class="stage"><div class="n">2</div><div class="b">
+  <h4>체내 장기 결석 (담독과 미세 돌 축적)</h4>
+  <p><b>발병 메커니즘:</b> 배출되지 않은 탄산칼슘은 체내 장기와 이소성 조직에 머무르며 담독을 형성한다. 빠져나가지 못한 미세 입자들이 소변, 담즙, 기타 체액 내에서 결석의 핵을 이루며 서로 뭉쳐 커지게 되고, 결국 담석, 신장결석, 요로결석 등 체내 각종 장기 결석의 실체적 뿌리(기초석)가 된다.</p>
+</div></div>
+<div class="stage"><div class="n">3</div><div class="b">
+  <h4>혈관 질환 및 석회화 (Vascular Calcification)</h4>
+  <p><b>발병 메커니즘:</b> 혈액을 따라 체내를 순환하던 미세 탄산칼슘 침전물은 혈관 내벽 부위에 침착을 일으킨다. 혈관 벽에 석회 성분이 쌓이면서 혈관의 유연성과 탄력성이 저하되고, 혈관 석회화가 진행됨에 따라 동맥경화, 고혈압 등 중증 심혈관 질환의 위험성을 극적으로 높인다.</p>
+</div></div>
+<div class="stage"><div class="n">4</div><div class="b">
+  <h4>관절 및 힘줄 석회화 (석회화 건염 및 오십견)</h4>
+  <p><b>발병 메커니즘:</b> 탄산칼슘은 혈류가 완만하고 운동량이 많은 관절과 힘줄 부위에도 집중적으로 끼어든다. 어깨 관절과 힘줄 주변에 석회(탄산칼슘)가 축적되면 석회화 건염이 발생하며, 이는 어깨가 굳어 팔이 올라가지 않고 극심한 통증을 유발하는 ‘오십견’의 실질적인 병리적 원인이 된다.</p>
+</div></div>
+
+<h3>"서서히 죽이는 결점"의 개념화</h3>
+<blockquote>"먹으면 바로 죽이는 것은 독극물이고,<br>서서히 천천히 죽이는 것은 결점이다."</blockquote>
+
+<p>독극물은 인체에 유입되는 즉시 거부 반응을 일으켜 생명을 위협하므로 대중이 사전에 경계하고 차단할 수 있다. 그러나 물속 탄산칼슘과 같은 '결점(Defect)'은 즉각적인 독성을 드러내지 않은 채, 십수 년에서 수십 년에 걸쳐 독자의 몸속 곳곳에 침묵 속에서 침착된다.</p>
+
+<p>개미구멍 하나가 천 길 둑을 무너뜨리듯, 미세하게 쌓인 탄산칼슘 결점은 인체 장기와 순환계를 서서히 망가뜨린다. 현대인이 기대 수명 100세를 다 채우지 못하고 각종 만성 질환에 시달리며 수명을 단축당하는 진짜 주범은 바로 매일 무심코 마시는 물속의 숨겨진 결점 때문이다.</p>
+
+<p class="transition">탄산칼슘이 유발하는 만성 질환의 병리적 위험성을 극복하기 위해서는 물속 유해 미네랄과 극성 물질을 완벽히 차단한 대안이 필요하다. 다음으로 물리 화학적 해명을 통해 궁극의 해결책으로 제시되는 '초순수(기화수)'의 과학적 원리를 다룬다.</p>
+
+<!-- 4 -->
+<h2><span class="num">4</span>핵심 원고 콘텐츠: 대안으로서의 초순수(기화수)와 물의 물리 화학적 해명<span class="en">Physicochemical Solution: Ultrapure Water</span></h2>
+
+<p>오염된 현대의 물과 유해 미네랄 결함을 극복할 수 있는 궁극의 솔루션은 바로 <strong>'초순수(기화수)'</strong>이다. 초순수란 물 분자(H<sub>2</sub>O) 외에 미네랄, 금속 이온, 맛, 향, 오염물질 등 그 어떤 불순물도 존재하지 않는 완전한 순수 상태를 의미한다. 이는 대기와 환경이 오염되기 전, 자연계에서 솟아올라 인류 태초의 조상들이 마셨던 '태초의 빗물'과 본질적으로 동일한 물리 화학적 상태를 가리킨다.</p>
+
+<h3>기화수(초순수) vs 증류수의 화학적/물리적 차이 규명</h3>
+<p>대중과 학계는 흔히 끓여서 모은 '증류수'와 자연적 상변화를 거친 '기화수'를 동일하게 취급하는 오류를 범한다. 그러나 생성 원리와 동반 입자 이론, TDS 정밀 측정 결과에서 두 물은 명확한 차이를 나타낸다.</p>
+
+<div class="waterbox">
+  <div class="w dist">
+    <h4>증류수 (끓여서 올라오는 동반 입자 현상)</h4>
+    <p>인위적 열과 압력이 가해질 때 물 분자의 운동 에너지가 급증하면서 강하게 끌려 올라간다. 이 과정에서 물 분자뿐만 아니라 주변의 미세 금속 이온, 맛, 향 입자를 강제로 수증기 기류에 동반 입자(Entrained Particles)로 끌고 올라오게 된다.</p>
+    <ul>
+      <li><b>포도주 증류 비유:</b> 포도주를 증류하여 코냑을 만들 때 에탄올 분자만 추출되는 것이 아니라 원래 포도주가 가진 향과 맛, 미세 성분이 수증기에 동반되어 함께 올라오는 물리 현상과 동일하다.</li>
+      <li><b>전기적 정밀 측정:</b> 증류수를 TDS 및 메가(MΩ) 단위의 정밀 전기전도도 측정기로 검출해 보면 플러스(+) 및 마이너스(-) 극성을 띤 미세 이온 수치가 잔존하여 검출된다. 이는 증류수가 겉보기에는 깨끗해 보이나 극성 이온이 포함된 불완전한 물임을 입증한다.</li>
+    </ul>
+  </div>
+  <div class="w vap">
+    <h4>기화수 (초순수 / 수면 분자 이탈 및 대기 3단계 분리 과정)</h4>
+    <p>기화수는 강한 열 가열 없이 오염된 물의 수면에서 표면장력을 뚫고 오직 Pure H<sub>2</sub>O 분자 개체만 개별적으로 이탈(Evaporation)하는 순간의 물이다. 따라서 불순물이 물리적으로 동반될 수 없다.</p>
+    <ul>
+      <li><b>대기 상승 분리 메커니즘 (3단계 분리):</b> 수면에서 이탈한 분자가 상공으로 상승하는 과정에서 미세한 향과 맛은 대기 중으로 확산(Dissipation)되어 사라지고, 무거운 미세 금속 물질은 중력에 의해 지상으로 침강(Precipitation)한다. 비로 내리기 전 상공에는 극성이 완전 제거된 100% 완전체 H<sub>2</sub>O(초순수/태초의 빗물)만 남게 된다.</li>
+    </ul>
+  </div>
+</div>
+
+<h3>열역학 법칙과 완전체 물의 정의</h3>
+<p>열역학 법칙에 따르면 결함과 결점이 존재하는 모든 불완전한 물질은 시간이 흐를수록 결함들끼리 뭉치고 커지며 엔트로피(무질서도)가 증가하고 변질된다. 몸속 탄산칼슘이 나이가 듦에 따라 커다란 결석과 석회화로 발전하는 것이 대표적인 예이다.</p>
+<p>그러나 결점이 전혀 없는 완전체, 즉 Pure H<sub>2</sub>O 분자 자체인 초순수는 이러한 열역학적 퇴화 법칙을 비켜간다. 시작부터 결함이 없는 완전한 물은 100년, 1000년, 억년의 세월이 흘러도 물질적 변질이나 부패가 일어나지 않는 영원성을 지닌다. 오염물질과 탄산칼슘을 배제하고 완전한 상태의 물을 복원하여 섭취하는 것이야말로 인체 결함을 차단하는 유일한 물리 화학적 해법이다.</p>
+
+<p class="transition">초순수의 물리 화학적 우위성을 바탕으로, 다음으로 독자들이 이 파격적인 이론을 쉽게 이해하고 일상에서 체계적으로 실천할 수 있도록 설계된 5개 장(Chapter) 중심의 도서 목차 구성안을 서술한다.</p>
+
+<!-- 5 -->
+<h2><span class="num">5</span>도서 목차 구상 및 구성안<span class="en">Book Structure &amp; Chapter Architecture</span></h2>
+
+<p>본 도서는 독자가 기존의 잘못된 미네랄 상식에서 벗어나 물속 탄산칼슘의 위험성을 깨닫고, 초순수의 과학적 대안을 거쳐 일상 속 건강 혁명에 이르도록 기승전결(起承轉結)의 완벽한 논리 구조로 설계되었다.</p>
+
+<div class="flow">
+  <div class="node edge">[프롤로그] 세상에 없던 물 이야기 – 내가 달라지고 건강이 달라진다</div><div class="arrow">↓</div>
+  <div class="node">[제1장] 등하불명, 우리가 마시는 물의 숨겨진 결점</div><div class="arrow">↓</div>
+  <div class="node">[제2장] 몸속에 쌓이는 돌, 탄산칼슘의 체내 침착 잔혹사</div><div class="arrow">↓</div>
+  <div class="node">[제3장] 식물의 칼슘 vs 물속의 탄산칼슘</div><div class="arrow">↓</div>
+  <div class="node">[제4장] 태초의 빗물, 초순수(기화수)의 비밀</div><div class="arrow">↓</div>
+  <div class="node">[제5장] 100세 건강을 위한 일상 속 물의 혁명</div><div class="arrow">↓</div>
+  <div class="node edge">[에필로그] 싸우지 않고 이기는 건강의 지혜 – 원인을 차단하면 질병은 없다</div>
+</div>
+
+<h3>장별 세부 목차 및 핵심 내용 구성안</h3>
+<div class="chapter"><div class="t">프롤로그: 세상에 없던 물 이야기 – 내가 달라지고 건강이 달라진다</div><ul>
+  <li>인간 본능으로서의 오복(五福)과 건강장수(壽位先)의 열망.</li>
+  <li>죽자살자 노력해도 만성 질환에 막히는 이유: 질병의 원인 차단 실패.</li>
+  <li>구시화문(口是禍門)의 경고: 음식과 먹는 물 속에 숨겨진 '결점' 조명.</li>
+</ul></div>
+<div class="chapter"><div class="t">제1장: 등하불명, 우리가 마시는 물의 숨겨진 결점</div><ul>
+  <li>누구도 잘 안다고 생각하지만 아무도 모르는 먹는 물의 등하불명.</li>
+  <li>법적 먹는 물 수질 기준(50~60항목)의 진짜 의미: 독극물을 겨우 면한 '이하(≤)'의 함정.</li>
+  <li>TDS 측정기가 밝혀내는 98% 무기 탄산칼슘 수치와 미네랄 예찬론의 마케팅 허구.</li>
+</ul></div>
+<div class="chapter"><div class="t">제2장: 몸속에 쌓이는 돌, 탄산칼슘의 체내 침착 잔혹사</div><ul>
+  <li>순환되지 않는 무기 탄산칼슘(CaCO<sub>3</sub>)과 한의학적 '담독(膽毒)'.</li>
+  <li>치아 표면에 붙는 치석에서 치주질환까지: 잇몸을 파괴하는 물속 석회.</li>
+  <li>갓 태어난 아기에겐 없고 나이 들면 생기는 미세 결석과 신장·담낭 결석의 뿌리.</li>
+  <li>혈관을 굳게 만드는 혈관 석회화와 어깨를 굳히는 오십견(석회화 건염)의 실체.</li>
+</ul></div>
+<div class="chapter"><div class="t">제3장: 식물의 칼슘 vs 물속의 탄산칼슘</div><ul>
+  <li>자연 생태계의 섭리: 순천자존(順天者存) 역천자망(逆天者亡)의 법칙.</li>
+  <li>독립영양체(식물)가 유기물로 코팅한 순수 생체 칼슘의 완벽한 대사 메커니즘.</li>
+  <li>종속영양체(인간)의 영양 수용 법칙: 칼슘은 오직 음식(식물)으로 섭취하라.</li>
+  <li>지하와 대기 반응이 만든 결함 물질 '물속 무기 탄산칼슘'의 해로움.</li>
+</ul></div>
+<div class="chapter"><div class="t">제4장: 태초의 빗물, 초순수(기화수)의 비밀</div><ul>
+  <li>끓여서 끌어올리는 증류수의 한계: 포도주 증류(코냑) 동반 입자와 미세 극성 이온 검출.</li>
+  <li>수면에서 물 분자만 자연 이탈하는 기화수(초순수)의 물리적 정의.</li>
+  <li>대기 3단계 분리(확산·침강·순수화)로 완성되는 순수 H<sub>2</sub>O 분자.</li>
+  <li>열역학 법칙을 비켜가는 변하지 않는 완전체, 태초 빗물의 복원.</li>
+</ul></div>
+<div class="chapter"><div class="t">제5장: 100세 건강을 위한 일상 속 물의 혁명</div><ul>
+  <li>일반 정수 필터의 한계와 미세 금속 원소를 걸러내는 역삼투압(RO) 정수 방식.</li>
+  <li>완전 정수 필터 솔루션을 통한 몸속 석회 및 결석 원인 물질의 완전 차단.</li>
+  <li>당뇨, 만성 통증, 결석 예방을 도모하는 일상 속 초순수 음용 가이드.</li>
+</ul></div>
+<div class="chapter"><div class="t">에필로그: 싸우지 않고 이기는 건강의 지혜 – 원인을 차단하면 질병은 없다</div><ul>
+  <li>지피지기(知己知彼)와 손자병법의 최상책: 질병과 싸우는 '항(抗)·쟁(爭)' 대신 '부쟁이승(不爭而勝)'.</li>
+  <li>결과 치료에 목매는 의학계의 한계를 넘어 원인을 차단하는 100세 건강 선언.</li>
+</ul></div>
+
+<p class="transition">이와 같이 단단하게 설계된 도서 목차 구성안을 성공적인 출판 비즈니스로 전환하기 위해, 다음으로 리스크를 최소화하고 대중적 확산력을 극대화할 3단계 마케팅 및 보급 전략을 서술한다.</p>
+
+<!-- 6 -->
+<h2><span class="num">6</span>출판 실행 및 마케팅·보급 전략<span class="en">Publication &amp; Commercialization Strategy</span></h2>
+
+<p>본 출판 프로젝트는 도서 출간에 들어가는 초기 제작 리스크를 최소화하는 동시에 디지털 아카이빙 및 AI 검색 노출을 극대화하고, 향후 종이책 발간과 대국민 건강 캠페인으로 확장하는 3단계 애자일(Agile) 출판 전략을 실행한다.</p>
+
+<h3>단계별 출판 및 마케팅 로드맵</h3>
+<div class="roadmap">
+  <div class="step" data-n="1">
+    <h4>1단계 (Agile E-Book Release: 신속성 및 디지털 아카이빙)</h4>
+    <ul>
+      <li>편집 비용을 최소화(전자책 포맷팅 비용 약 30만 원 수준 활용)하여 신속하게 원고를 정돈한다.</li>
+      <li>교보문고, 알라딘 등 국내 주요 플랫폼 및 아마존 글로벌(영문 번역본) 전자책으로 우선 등록한다.</li>
+      <li>LLM(대형 언어 모델) 및 AI 검색 엔진이 본 도서의 파격적 지식을 우선 수집·인용할 수 있도록 웹 디지털 데이터베이스 노출을 극대화한다.</li>
+    </ul>
+  </div>
+  <div class="step" data-n="2">
+    <h4>2단계 (Paperback &amp; Public Authority: 객관적 검증 및 학술 권위 확보)</h4>
+    <ul>
+      <li>전자책 출시 후 시장 반응과 독자 데이터를 바탕으로 원고를 보강하여 양장 종이책(Paperback)을 정식 출간한다.</li>
+      <li>이미 초순수(기화수)의 가치를 깊이 인지하고 직접 음용하며 "세계 최고 수준의 물"로 평가하고 있는 대안의학계의 거두 전세일 박사의 공식 감수를 유치한다.</li>
+      <li>전세일 박사 및 대안의학 학회와 연계하여 저자 강연회 및 학술 포럼 presentation을 개최함으로써 원고의 공신력과 대중적 신뢰도를 극대화한다.</li>
+    </ul>
+  </div>
+  <div class="step" data-n="3">
+    <h4>3단계 (Ecosystem Expansion: 기술 연계 및 대국민 캠페인)</h4>
+    <ul>
+      <li>도서의 콘텐츠를 실제 일상에서 실천할 수 있도록 역삼투압 및 완전 정수 필터 기술 솔루션과 결합한다.</li>
+      <li>몸속 결석과 치석, 석회화를 예방하는 '원인 차단 먹는 물 혁명' 대국민 건강 캠페인을 추진한다.</li>
+      <li>초순수를 경험하고 증상이 개선된 독자층을 중심으로 구전 마케팅을 전개하여 도서 판매와 정수 인프라 보급이 선순환하는 헬스케어 생태계를 완성한다.</li>
+    </ul>
+  </div>
+</div>
+
+<h3>최종 결론 요약</h3>
+<div class="conclusion">
+  <p>본 출판 기획서 《등하불명의 먹는 물: 몸을 굳게 만드는 탄산칼슘의 침묵과 초순수의 생명력》은 단순한 도서 출간을 넘어, 현대 의학과 정수 산업이 외면해 온 '먹는 물 속 무기 탄산칼슘'이라는 결정적 결함을 천하에 밝히는 지식 혁명의 시작점이다.</p>
+  <p style="margin-bottom:0">식물 유기 칼슘과의 대조를 통해 생태 질서를 규명하고, 대안으로서 초순수(기화수)의 물리 화학적 완전성을 제시하는 본 서적은, 질병의 결과 치료에 매달리던 대중에게 원인을 차단하여 100세 건강을 누리게 하는 삶의 전환점이 될 것이다. 본 출판 마스터플랜의 실행을 통해 수질 과학과 자연 의학의 새로운 지평을 열고 파급력 있는 시대를 이끄는 지적 자산을 구축할 것을 확신한다.</p>
+</div>
+
+<footer>[출판 기획서] 등하불명의 먹는 물: 몸을 굳게 만드는 탄산칼슘의 침묵과 초순수의 생명력</footer>
+</main>
+</div>
+</body>
+</html>
